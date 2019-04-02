@@ -1,0 +1,12 @@
+.input-file .preview {
+  background-image: url(/hoge.jpg);
+}
+
+.input-file input[type="file"] {
+  opacity: 0;
+}
+
+.uploadedImg {
+  height: auto;
+  width: 300px;
+}
