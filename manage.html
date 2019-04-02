@@ -13,12 +13,11 @@
   <div id='sitenm'>
     <h1><a href='./top.html' style='color:#6bbf3f;text-decoration:none;'>アルバム工房</a></h1>
   </div>
-
-  <div id='input_file' class='input_file'>
-    <p class='btn_upload'>
-        画像ファイルを選択してアップロード
-    </p>
+  <div id='registerData' class='registerData'>
     <div id='uploadImg'>
+      <p class='btn_upload'>
+        画像ファイルを選択してアップロード
+      </p>
       <input type='file' @change='indicateImg'>
       <div v-if='uploadedImg'>
         <img :src='uploadedImg' class='uploadedImg'>
@@ -26,9 +25,9 @@
     </div>
     <form id='sendImgData' class='simple-form'>
       <label for='title'>画像タイトル：</label>
-      <input type='text' name='title'><br>
-      <label for='title'>画像ジャンル：</label>
-      <select name='cont_name'>
+      <input type='text' name='title' v-model='title'><br>
+      <label for='cont_name'>画像ジャンル：</label>
+      <select name='cont_name' v-model='cont_name'>
         <option value='hachopochi'>hachipochi</option>
       </select><br>
       <button type="button" @click="onSubmit">画像を登録する</button>
