@@ -6,17 +6,18 @@
   <script src="https://cdn.jsdelivr.net/vue.router/2.0.1/vue-router.min.js"></script>
   <script type="text/javascript" src="./js/common.js"></script>
   <script type="text/javascript">head();</script>
+  <script type="text/javascript" src="./js/top.js"></script>
   <link rel="stylesheet" type="text/css" href="./css/top.css">
 </head>
 <body>
-  <div id='sitenm'>
+  <div id="sitenm">
     <!-- 下記のコードはcommon.cssと設定が重複しているが、この処理がないとクリックによって文字色が変わってしまう -->
     <h1><a href="./top.html" style="color:#6bbf3f;text-decoration:none">はちぽち.net</a></h1>
   </div>
   <img class="hachipochi" src="https://s3-ap-northeast-1.amazonaws.com/hachipochi-img/hachipochi_hakusai.JPG">
-  <div id='gallery'>
+  <div id="gallery" v-for="post in posts">
     <h2>Gallery</h2>
-    <a href='./gallery.html?cont=hachipochi'>はちぽち</a>
+    <a :href="post.button_url" class="button">{{ post.item_info.value }}</a>
   </div>
   <script src="./js/top.js"></script>
 </body>

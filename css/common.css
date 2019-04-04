@@ -7,3 +7,30 @@ h1,h2{
   color: #6bbf3f;
   font-family: "Note Sans JP";
 }
+
+.button {
+  padding: 0.5em;
+  margin: 10px 0;
+  color: #fff;
+  background: #00913D;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.button:before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: -3px 5px 0 0;
+  background: url('../img/dog_nikukyu.png') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.button:hover {
+  background: #6FBB3F;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang='ja'>
+<head>
+  <meta charset='utf-8'>
+  <script src='https://cdn.jsdelivr.net/npm/vue'></script>
+  <script src='https://cdn.jsdelivr.net/vue.router/2.0.1/vue-router.min.js'></script>
+  <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+  <script type='text/javascript' src='./js/common.js'></script>
+  <script type='text/javascript'>head();</script>
+  <link rel='stylesheet' type='text/css' href='./css/manage.css'>
+</head>
+<body>
+  <div id='sitenm'>
+    <h1><a href='./top.html' style='color:#6bbf3f;text-decoration:none;'>アルバム工房</a></h1>
+  </div>
+  <div id='registerData' class='registerData'>
+    <div id='uploadImg'>
+      <p class='btn_upload'>
+        画像ファイルを選択してアップロード
+      </p>
+      <input type='file' @change='indicateImg'>
+      <div v-if='uploadedImg'>
+        <img :src='uploadedImg' class='uploadedImg'>
+      </div>
+    </div>
+    <form id='sendImgData' class='simple-form'>
+      <label for='title'>画像タイトル：</label>
+      <input type='text' name='title' v-model='title'><br>
+      <label for='cont_name'>画像ジャンル：</label>
+      <select name='cont_name' v-model='cont_name'>
+        <option value='hachopochi'>hachipochi</option>
+      </select><br>
+      <button type="button" @click="onSubmit">画像を登録する</button>
+    </form>
+  </div>
+  <script src='./js/manage.js'></script>
+</body>
+</html>
