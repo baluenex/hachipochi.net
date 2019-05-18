@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdn.jsdelivr.net/vue.router/2.0.1/vue-router.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="./js/common.js"></script>
+  <script type="text/javascript">head();</script>
+
+</head>
+<body>
+  <div class="siteName">
+    <!-- 下記のコードはcommon.cssと設定が重複しているが、この処理がないとクリックによって文字色が変わってしまう -->
+    <h1><a href="./top.html" style="color:#6bbf3f;text-decoration:none">新しい仲間を登録</a></h1>
+  </div>
+
+  <div id="currentGenre" class="currentGenre">
+    <h2>現在の仲間たち</h2>
+    <div class="currentGenreTable">
+      <table align="center" border="1">
+        <tr>
+          <td>識別名</td>
+          <td>表示名</td>
+        </tr>
+        <tr v-for="result in results">
+          <td>{{ result.item_info[0].cont_name }}</td>
+          <td>{{ result.item_info[1].value }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="newcomer">
+    <h2>新しい仲間を登録しよう</h2>
+    <div class="newcomerRegister" id="registerNewcomer">
+      <form>
+        <label for="cont_name"> 新ジャンル名（半角英数字で記載）：</label>
+        <input type="text" v-model="cont_name"><br>
+        <label for="displayName">ボタン等の表示名（全角で記載）：</label>
+        <input type="text" v-model="value">
+      </form>
+      <button type="button" @click="onSubmit">登録する</button>
+    </div>
+  </div>
+  <script type="text/javascript" src="./js/register-genre.js"></script>
+</body>
+</html>
