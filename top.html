@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
+  <meta name="description" content="僕たちはちぽちをはじめとする、とても可愛らしい我が家のアニマルグッズを紹介するサイトだわん！わん！">
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script src="https://cdn.jsdelivr.net/vue.router/2.0.1/vue-router.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -11,10 +12,13 @@
   <link rel="stylesheet" type="text/css" href="./css/top.css">
 </head>
 <body>
-  <div class="siteName">
+  <header>
+    <div class="homeDoor">
+      <button onclick="location.href='./signin.html'">家主の部屋</button>
+    </div>
     <!-- 下記のコードはcommon.cssと設定が重複しているが、この処理がないとクリックによって文字色が変わってしまう -->
     <h1><a href="./top.html" style="color:#6bbf3f;text-decoration:none">はちぽち.net</a></h1>
-  </div>
+  </header>
   <img class="hachipochi" src="./img/hachipochi_hanami01.JPG">
   <div id="gallery">
     <h2>Gallery</h2>

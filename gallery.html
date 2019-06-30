@@ -17,7 +17,7 @@
     <div class='item_card' v-for="result in results">
       {{ result.item_info.img_title }}<br>
       <a :href="'https://s3-ap-northeast-1.amazonaws.com/hachipochi-img/' +result.item_id" target="_blank">
-        <img class="img_picture" :src="'https://s3-ap-northeast-1.amazonaws.com/hachipochi-img/' + result.item_id">
+        <img class="img_picture" :src="'https://s3-ap-northeast-1.amazonaws.com/hachipochi-img-thumbnail/thumb_' + result.item_id">
       </a>
     </div>
   </div>

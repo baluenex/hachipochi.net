@@ -34,17 +34,39 @@ window.onload = function() {
   var registerGenre = new Vue({
     el: "#registerNewcomer",
     data: {
-      cont_name: "",
-      value: "",
-      data: []
+      newcomer: {
+        cont_name: "",
+        value: ""
+      }
+    },
+    computed: {
+      validation() {
+        const newcomer = this.newcomer;
+        return {
+          cont_name : (newcomer.cont_name),
+          value : (newcomer.value)
+        }
+      },
+      isValid() {
+        const validation = this.validation;
+        return Object
+          .keys(validation)
+          .every(function (key) {
+            return validation[key]
+          })
+      }
     },
     methods: {
+      errorClassObject(key) {
+        return {
+          'has-error': (this.validation[key] == false)
+        }
+      },
       onSubmit() {
         console.log("新しい仲間を登録するよ！");
-        data = [{"cont_name": this.cont_name},{"value": this.value}]
-
+        let data = [{"cont_name": this.cont_name},{"value": this.value}]
         let url = baseUrl + 'genre'
-        
+
         axios.post(url,JSON.stringify(data))
         .then((response) => {
           console.log(response.data);

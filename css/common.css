@@ -8,6 +8,10 @@ h1,h2{
   font-family: "Note Sans JP";
 }
 
+.homeDoor {
+  text-align: right;
+}
+
 .button {
   padding: 0.5em;
   margin: 10px 3px;
